@@ -5,7 +5,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
   exit 1
 fi
 
-domains=(asyncc.com)
+domains=(dabaodz.cn)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="" # Adding a valid address is strongly recommended
@@ -76,5 +76,5 @@ docker-compose run --rm --entrypoint "\
     --force-renewal" certbot
 echo
 
-# echo "### Reloading nginx ..."
-# docker-compose exec nginx nginx -s reload
+echo "### stop nginx ..."
+docker-compose down
